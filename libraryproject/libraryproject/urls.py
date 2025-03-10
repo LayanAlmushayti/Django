@@ -21,7 +21,7 @@ import apps.bookmodule.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include("apps.bookmodule.urls")), #include urls.py of bookmodule app
-    path('users/', include("apps.usermodule.urls"))  #include urls.py of usermodule app
+    path('users/', include("apps.usermodule.urls")),  #include urls.py of usermodule app
     # path('index2/<int:val1>/', apps.bookmodule.views.index2)  #add only this line
     
 ]

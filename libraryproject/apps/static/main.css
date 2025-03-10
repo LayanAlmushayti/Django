@@ -1,0 +1,83 @@
+.listing{
+    color: white;
+    background-color: #5f9ea0; /* Teal background */
+    padding: 10px;
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+h1 {
+    color: darkgreen;
+    background-color: #f8f8dc; /* Light yellowish background */
+    padding: 10px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+table {
+    margin: 20px auto; /* Auto centers the table */
+    text-align: center;
+    border: 1px solid black;
+}
+
+/* Styling for tables */
+.camelid-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+/* Table 1: Fruits Table */
+.fruit-table th, .fruit-table td {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+}
+
+/* Table 2: Camelid Table */
+.camelid-table th, .camelid-table td {
+    border: 1px solid black;
+    padding: 1px;
+}
+
+.camelid-table .table-header {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+}
+
+/* Image in Table */
+.table-image {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

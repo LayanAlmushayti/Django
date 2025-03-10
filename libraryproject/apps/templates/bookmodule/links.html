@@ -1,0 +1,54 @@
+
+{% extends "layouts/base.html" %}
+
+{% block stylesheets %}
+
+<style>
+    .lin {
+    display: block; /* Make links take full width */
+    width: 100%;
+    text-align: center; /* Center text */
+    padding: 15px; /* Add spacing */
+    font-size: 18px; /* Adjust text size */
+
+    }
+    #one:visited, #two:visited, #three:visited {
+            color: purple;
+    }
+
+    #one:hover, #two:hover, #three:hover{
+            color: rgb(0, 0, 247);
+    }
+
+    #one:active, #two:active, #three:active{
+            color: rgb(255, 0, 123);
+    }
+
+
+
+    #one{
+        background-color:lightgreen;
+        color:red;
+    }
+
+    #two {
+    background-color: darkgray;
+    color: gold;
+    }
+
+    #three {
+    background-color: black;
+    color: white;
+    
+    }
+</style>
+
+{% endblock stylesheets %}
+
+{% block content %} 
+    
+    <a class="lin" id="one" href="https://myqu.qu.edu.sa/" target="_blank">Go To Qu Website (open a new tab)</a>
+    <a class="lin" id="two" href="https://myqu.qu.edu.sa/" target="_self">Go To Qu Website (open in the same bage/tab)</a>
+    <a class="lin" id="three" href="https://myqu.qu.edu.sa/" target="_parent">Go To Qu Website (open in the same bage/tab)</a>
+
+{% endblock content %}
