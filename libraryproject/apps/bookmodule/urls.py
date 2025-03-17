@@ -9,6 +9,7 @@ urlpatterns = [
     path('text/formatting', views.textformat, name='/books.html5/textformatting'),
     path('listing/', views.listing, name='/books.html5/listing'),
     path('tables/', views.tables, name='/books.html5/tables'),
+    path('search/', views.search_books, name='book_search'),
 ]
 
 
