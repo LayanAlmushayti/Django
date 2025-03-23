@@ -17,3 +17,10 @@
 
 <a href="{% url 'book_search' %}">Go back to search</a>
 {% endblock content %}
+
+
+{% for obj in books %}
+    ID: {{obj.id}}, Title: {{obj.title}}
+    <hr>
+{% endfor %}
+
