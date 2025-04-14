@@ -12,6 +12,13 @@ urlpatterns = [
     path('search/', views.search_books, name='book_search'),
     path('simple/query/', views.simple_query, name='simple_query'),
     path('complex/query', views.complex_query, name='book_search'),
+    path('lab8/task1/', views.list_books_task1, name='list_books_task2'),
+    path('lab8/task2/', views.list_books_task2, name='list_books_task2'),
+    path('lab8/task3/', views.list_books_task3, name='list_books_task3'),
+    path('lab8/task4/', views.list_books_task4, name='list_books_ordered_by_title'),
+    path('lab8/task5/', views.books_aggregates, name='books_aggregates'),
+    path('students-per-city/', views.students_per_city, name='students_per_city'),
+
 ]
 
 

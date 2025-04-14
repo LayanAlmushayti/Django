@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Statistics</title>
+</head>
+<body>
+    <h1>Books Aggregated Data</h1>
+    <ul>
+        <li><strong>Total Books:</strong> {{ stats.total_books }}</li>
+        <li><strong>Total Price:</strong> ${{ stats.total_price }}</li>
+        <li><strong>Average Price:</strong> ${{ stats.avg_price|floatformat:2 }}</li>
+        <li><strong>Maximum Price:</strong> ${{ stats.max_price }}</li>
+        <li><strong>Minimum Price:</strong> ${{ stats.min_price }}</li>
+    </ul>
+</body>
+</html>

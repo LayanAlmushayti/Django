@@ -1,0 +1,17 @@
+<!-- books/templates/books/task1.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books Under 20</title>
+</head>
+<body>
+    <h1>Books with Price ≤ 20</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - ${{ book.price }}</li>
+        {% empty %}
+            <li>No books found under 20.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

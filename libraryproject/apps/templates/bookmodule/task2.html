@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books with Edition > 3 and 'co' in Title or Author</title>
+</head>
+<body>
+    <h1>Filtered Books</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong> by {{ book.author }}  
+                (Edition: {{ book.edition }})
+            </li>
+        {% empty %}
+            <li>No books match the criteria.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
