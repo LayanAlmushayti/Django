@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Departments with More Than 2 Students</title>
+</head>
+<body>
+    <h1>Departments with More Than 2 Students</h1>
+    <table border="1">
+        <tr>
+            <th>Department</th>
+            <th>Number of Students</th>
+        </tr>
+        {% for dept in data %}
+        <tr>
+            <td>{{ dept.name }}</td>
+            <td>{{ dept.student_count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

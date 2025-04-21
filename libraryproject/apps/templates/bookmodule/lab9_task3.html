@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oldest Student per Department</title>
+</head>
+<body>
+    <h1>Oldest Student (by ID) in Each Department</h1>
+    <table border="1">
+        <tr>
+            <th>Department</th>
+            <th>Student Name</th>
+            <th>Age</th>
+        </tr>
+        {% for dept in data %}
+        <tr>
+            <td>{{ dept.name }}</td>
+            <td>{{ dept.oldest_student_name }}</td>
+            <td>{{ dept.oldest_student_age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

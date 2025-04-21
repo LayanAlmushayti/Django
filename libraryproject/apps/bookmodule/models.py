@@ -42,12 +42,30 @@ class Student(models.Model):
 
     ## lab 9
 
+
+class Course(models.Model):
+    title = models.CharField(max_length=100)
+    code = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.title} ({self.code})"
+
+
+class Department(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name   
+
 class Student2(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True, blank=True)
+    courses = models.ManyToManyField(Course)
 
     def __str__(self):
         return self.name
+
 
 class Card(models.Model):
     student = models.OneToOneField(Student2, on_delete=models.PROTECT)
@@ -56,6 +74,12 @@ class Card(models.Model):
 
     def __str__(self):
         return f"{self.card_number} - {self.student.name}"
+    
+
+
+
+
+
 
 
 

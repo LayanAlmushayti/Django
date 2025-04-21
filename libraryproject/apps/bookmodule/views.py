@@ -3,9 +3,9 @@ from .models import Book
 
 from django.http import HttpResponse
 
-from django.db.models import Q ,Count, Sum, Avg, Max, Min
+from django.db.models import Q ,Count, Sum, Avg, Max, Min , OuterRef, Subquery
 
-from .models import Student
+from .models import Student , Department , Course , Student2
 
 
 # def index(request):
@@ -147,5 +147,37 @@ def students_per_city(request):
     return render(request, 'bookmodule/students_per_city.html', {'data': data})
 
 
+
+#lab 9
+
+def department_student_count(request):
+    data = Department.objects.annotate(total_students=Count('student2'))
+    return render(request, 'bookmodule/lab9_task1.html', {'data': data})
+
+def course_student_count(request):
+    data = Course.objects.annotate(total_students=Count('student2'))
+    return render(request, 'bookmodule/lab9_task2.html', {'data': data})
+
+
+def oldest_student_per_department(request):
+    # Subquery to find the oldest student (by ID) in each department
+    oldest_students = Student2.objects.filter(
+        department=OuterRef('pk')
+    ).order_by('id')  # oldest = smallest ID
+
+    data = Department.objects.annotate(
+        oldest_student_name=Subquery(oldest_students.values('name')[:1]),
+        oldest_student_age=Subquery(oldest_students.values('age')[:1])
+    )
+
+    return render(request, 'bookmodule/lab9_task3.html', {'data': data})
+
+
+def departments_with_more_than_two_students(request):
+    data = Department.objects.annotate(
+        student_count=Count('student2')
+    ).filter(student_count__gt=2).order_by('-student_count')
+
+    return render(request, 'bookmodule/lab9_task4.html', {'data': data})
  
 

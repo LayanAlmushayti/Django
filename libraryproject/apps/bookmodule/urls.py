@@ -18,6 +18,10 @@ urlpatterns = [
     path('lab8/task4/', views.list_books_task4, name='list_books_ordered_by_title'),
     path('lab8/task5/', views.books_aggregates, name='books_aggregates'),
     path('students-per-city/', views.students_per_city, name='students_per_city'),
+    path('lab9/task1/', views.department_student_count, name='department_student_count'),
+    path('lab9/task2/', views.course_student_count, name='course_student_count'),
+    path('lab9/task3/', views.oldest_student_per_department, name='oldest_student_per_department'),
+    path('lab9/task4/', views.departments_with_more_than_two_students, name='departments_with_more_than_two_students'),
 
 ]
 
