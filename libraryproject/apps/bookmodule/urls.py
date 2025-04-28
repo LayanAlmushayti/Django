@@ -22,6 +22,18 @@ urlpatterns = [
     path('lab9/task2/', views.course_student_count, name='course_student_count'),
     path('lab9/task3/', views.oldest_student_per_department, name='oldest_student_per_department'),
     path('lab9/task4/', views.departments_with_more_than_two_students, name='departments_with_more_than_two_students'),
+    path('lab9_part1/listbooks/', views.list_books, name='list_books'),
+    path('lab9_part1/addbook/', views.add_book, name='add_book'),
+    path('lab9_part1/editbook/<int:id>/', views.edit_book, name='edit_book'),
+    path('lab9_part1/deletebook/<int:id>/', views.delete_book, name='delete_book'),
+
+    path('lab9_part2/listbooks/', views.list_books_form, name='list_books_form'),
+    path('lab9_part2/addbook/', views.add_book_form, name='add_book_form'),
+    path('lab9_part2/editbook/<int:id>/', views.edit_book_form, name='edit_book_form'),
+    path('lab9_part2/deletebook/<int:id>/', views.delete_book_form, name='delete_book_form'),
+
+
+
 
 ]
 

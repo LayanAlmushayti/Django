@@ -1,0 +1,10 @@
+<h1>Add New Book (Using Django Form)</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<br>
+<a href="{% url 'list_books_form' %}">Back to List</a>
