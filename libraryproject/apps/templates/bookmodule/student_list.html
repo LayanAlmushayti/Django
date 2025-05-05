@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>All Students</title></head>
+<body>
+    <h2>Student List</h2>
+    <a href="{% url 'student3_add' %}">Add New Student</a>
+    <ul>
+        {% for student in students %}
+            <li>
+                {{ student.name }} ({{ student.age }}) — 
+                {% for addr in student.addresses.all %}
+                    {{ addr.city }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+                [<a href="{% url 'student3_edit' student.pk %}">Edit</a>]
+                [<a href="{% url 'student3_delete' student.pk %}">Delete</a>]
+            </li>
+        {% empty %}
+            <li>No students found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

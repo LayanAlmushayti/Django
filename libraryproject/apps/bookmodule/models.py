@@ -76,6 +76,35 @@ class Card(models.Model):
         return f"{self.card_number} - {self.student.name}"
     
 
+#lab11 part2
+
+class Address3(models.Model):
+    city = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.city
+
+class Student3(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+    addresses = models.ManyToManyField(Address3)
+
+    def __str__(self):
+        return self.name
+
+
+    ##lab 11 part3
+
+class Gallery(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='gallery/')
+
+    def __str__(self):
+        return self.title
+    
+
+
+
 
 
 

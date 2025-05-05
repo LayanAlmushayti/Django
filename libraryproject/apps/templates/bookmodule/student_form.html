@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Student</title></head>
+<body>
+    <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Student</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if form.instance.pk %}Update{% else %}Save{% endif %}</button>
+    </form>
+    <a href="{% url 'student3_list' %}">Back to list</a>
+</body>
+</html>
