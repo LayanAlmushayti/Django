@@ -11,17 +11,35 @@
  
   <link rel="stylesheet" href="{% static 'styles.css' %}">
   <link rel="stylesheet" href="{% static 'main.css' %}">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   {% block stylesheets %}{% endblock stylesheets %}
 </head>
-<body>
-    
-    {% include "includes/header.html" %}
- 
-    {% block content %} {% endblock content %}
- 
-    {% include "includes/footer.html" %}
 
+<body>
+  {% include "includes/header.html" %}
+
+  <!-- 🔒 Login/Logout Navigation -->
+  <nav style="margin: 10px;">
+    {% if user.is_authenticated %}
+      <span>Welcome, {{ user.username }} |</span>
+      <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+      <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </nav>
+
+  <!-- 💬 Flash Messages -->
+  {% if messages %}
+    <ul style="color: green; margin: 10px;">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% block content %} {% endblock content %}
+
+  {% include "includes/footer.html" %}
 </body>
 </html>

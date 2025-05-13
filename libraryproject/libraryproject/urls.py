@@ -27,3 +27,5 @@ urlpatterns = [
     # path('index2/<int:val1>/', apps.bookmodule.views.index2)  #add only this line
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

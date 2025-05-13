@@ -8,6 +8,9 @@ from django.db.models import Q ,Count, Sum, Avg, Max, Min , OuterRef, Subquery
 from .models import Student , Department , Course , Student2 ,Student3 ,Gallery
 from .forms import BookForm , StudentForm , Student3Form ,GalleryForm
 
+from django.contrib.auth.decorators import login_required
+
+
 
 
 # def index(request):
@@ -33,8 +36,8 @@ def viewbook(request, bookId):
 def index(request):
     return render(request, "bookmodule/index.html")
  
-def list_books(request):
-    return render(request, 'bookmodule/list_books.html')
+# def list_books(request):
+#     return render(request, 'bookmodule/list_books.html')
  
 def viewbook(request, bookId):
     return render(request, 'bookmodule/one_book.html')
@@ -187,11 +190,12 @@ def departments_with_more_than_two_students(request):
 ######################
 #lab 10
 
+@login_required
 def list_books(request):
     books = Book.objects.all()  
     return render(request, 'bookmodule/lab9list_books.html', {'books': books})
 
-
+@login_required
 def add_book(request):
     if request.method == 'POST':
         title = request.POST['title']
@@ -205,12 +209,11 @@ def add_book(request):
             price=price,
             edition=edition
         )
-        return redirect('list_books')
+        return redirect('list_books') #the function
 
     return render(request, 'bookmodule/add_book.html')
 
-
-
+@login_required
 def edit_book(request, id):
     book = Book.objects.get(id=id)
 
@@ -224,7 +227,7 @@ def edit_book(request, id):
 
     return render(request, 'bookmodule/edit_book.html', {'book': book})
 
-
+@login_required
 def delete_book(request, id):
     book = Book.objects.get(id=id)
     book.delete()

@@ -132,3 +132,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# Add this at the bottom of settings.py:
+LOGIN_URL = '/users/login'
+LOGIN_REDIRECT_URL = '/books/'
+
